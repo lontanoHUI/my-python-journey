@@ -47,3 +47,14 @@ for i in range(101):
     sum=sum+i
 print(f"0-100的加和为:{sum}")  
 
+# 8 1-100所有的偶数打印
+for i in range(1,101):
+    if i%2==0:
+        print(i)
+
+
+#9 打印99乘法表
+for i in range(1,10):
+    for j in range(1,i+1):
+        print(f"{j}*{i}={i*j}"+"\t",end="")
+    print()  # 换行
