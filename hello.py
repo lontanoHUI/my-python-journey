@@ -58,3 +58,10 @@ for i in range(1,10):
     for j in range(1,i+1):
         print(f"{j}*{i}={i*j}"+"\t",end="")
     print()  # 换行
+
+
+#10 输入一个字符串，输出它的长度和反转后的字符串
+str=input("please enter a string:")
+print(f"此字符串的长度为:{len(str)}")
+print(f"反转后的字符串为:{str[::-1]}")  # 字符串反转
+
