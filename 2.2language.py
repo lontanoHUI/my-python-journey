@@ -49,3 +49,43 @@ with open("a.txt",encoding="utf-8") as f:
 #"a" 追加
 with open("a.txt","a",encoding="utf-8") as f:
     f.write("追加一行内容\n")
+
+
+
+#类与对象
+class Student:
+    def __init__(self,name,score):#构造方法
+        self.name=name
+        self.score=score
+
+    def is_pass(self):#实例方法
+        return self.score>=60
+    
+    def __str__(self):#决定print出来的样子
+        return f"Student(self.name,self.score)"
+    
+s=Student("zhangsan",88)
+print(s)
+print(s.is_pass())
+print(Student("lisi",54).is_pass())
+
+
+
+#继承
+class Animal:
+    def __init__(self,name):
+        self.name=name
+    def speak(self):
+        return "Animal sound"
+    
+class Dog(Animal):
+    def speak(self):
+        return "Woof!"
+
+class Cat(Animal):
+    def speak(self):
+        return "Meow!"
+g1=Dog("baby")
+print(g1.speak())
+c1=Cat("whiskers")
+print(c1.speak())
