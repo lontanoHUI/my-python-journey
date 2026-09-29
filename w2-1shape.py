@@ -11,6 +11,9 @@ class Shape:
     def __repr__(self):
         return f"Shape(name={self.name!r})"  #!r 表示对 self.name 使用 repr() 进行格式化，即自动为字符串加上引号。
 
+    def describe(self):
+        return f"This is a {self.name}"
+
 
 class Circle(Shape):
     def __init__(self, r):
@@ -22,6 +25,9 @@ class Circle(Shape):
 
     def __len__(self):
         return int(self.r)
+
+    def describe(self):
+        return super().describe()
 
 
 class Rectangle(Shape):
@@ -48,6 +54,8 @@ for s in [Circle(4), Rectangle(3, 4), Triangle(3, 4)]:
 print(repr(Rectangle(4, 6)))
 
 print(len(Circle(4)))
+
+print(Circle(4).describe())
 
 
 def total_area(shapes):
