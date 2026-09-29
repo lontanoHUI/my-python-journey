@@ -7,3 +7,10 @@ def factorial(n):
 
 
 print(factorial(5))
+
+
+def factorial2(n):
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
