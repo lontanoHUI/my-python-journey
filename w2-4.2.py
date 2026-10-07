@@ -36,5 +36,6 @@ async def handle():
     print(results)
 
 
+# 同步代码里不能直接跑协程，必须用 asyncio.run(main()) 包起来。
 asyncio.run(handle())
 asyncio.run(demo())
