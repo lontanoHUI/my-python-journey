@@ -57,3 +57,27 @@ print(cus.model_dump())
 # 字典 → 模型 → 字典 往返
 back = Customer.model_validate(json.loads(json.dumps(cus.model_dump())))
 print("往返一致：", back == cus)
+
+
+class Author(BaseModel):
+    name: str = Field(min_length=1)
+    email: str = Field(min_length=1)
+
+
+class Article(BaseModel):
+    title: str = Field(min_length=1, max_length=100)
+    content: str = Field(min_length=1)
+    views: int = Field(default=0, ge=0)
+    author: Author
+
+
+article = Article(
+    title="hello",
+    content="hello world",
+    view=-1,
+    author={"name": "whh", "email": "whh@example.com"},
+)
+print(article.model_dump())
+
+
+# 最长公共前缀
